@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Author, Tag, Post
 
+
 class PostAdmin(admin.ModelAdmin):
     list_filter = ("author", "date", "tags",)
     list_display = ("title", "date", "author",)

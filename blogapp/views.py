@@ -5,13 +5,13 @@ from .models import Post
 
 
 def starting_page(request):
-    latest_post = Post.objects.all().order_by("-date")[:3]
-    return render(request, 'index.html', {'latest_post': latest_post})
+    latest_posts = Post.objects.all().order_by("-date")[:3]
+    return render(request, 'index.html', {'latest_posts': latest_posts})
 
 
 def all_posts(request):
-    all_post = Post.objects.all().order_by("-date")
-    return render(request, 'all-post.html', {"all_post": all_post})
+    all_blog_posts = Post.objects.all().order_by("-date")
+    return render(request, 'all-post.html', {"all_blog_posts": all_blog_posts})
 
 
 def post_detail(request, slug):
