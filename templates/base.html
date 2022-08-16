@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      {% block page_title %}{% endblock %}
+     {% block css_styling %}{% endblock %}
+</head>
+<body>
+<header id="main-navigation">
+    <h1><a href="{% url 'starting_page' %}">Haseeb Blogs</a></h1>
+    <nav>
+        <a href="{% url 'all_posts' %}">All Posts</a>
+    </nav>
+</header>
+{% block content %}{% endblock %}
+</body>
+</html>

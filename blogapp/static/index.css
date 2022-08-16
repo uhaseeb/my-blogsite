@@ -1,0 +1,127 @@
+*{
+margin:0;
+padding:0;
+text-decoration:none;
+list-style:none;
+}
+
+#main-navigation{
+    height:70px;
+    width:100%;
+    background-color:blue;
+    display:flex;
+    border-bottom:1px solid white;
+
+}
+#main-navigation h1{
+margin-left: 800px;
+margin-top: 10px;
+font-size:50px;
+}
+
+#main-navigation a{
+text-decoration:none;
+color:white;
+}
+
+nav{
+    margin-left:500px;
+    margin-top:15px;
+    font-size:25px;
+}
+#welcome{
+height: 300px;
+width:100%;
+background-color:blue;
+
+}
+
+#welcome header{
+height:270px;
+width:40%;
+display:flex;
+margin:auto;
+flex-direction:column;
+}
+#welcome img{
+margin-left: 40%;
+margin-top: 20px;
+}
+#welcome h2{
+margin-left:42%;
+margin-top:20px;
+font-size:35px;
+}
+#welcome p{
+margin-left:22%;
+margin-top:20px;
+font-size:20px;
+}
+#welcome-img{
+height:150px;
+width:150px;
+border:1px solid black;
+}
+
+#latest-posts{
+height:400px;
+width:70%;
+margin-left: 13%;
+border-radius:30px;
+border: 1px solid red;
+}
+
+#latest-posts h2{
+margin-left:40%;
+font-size:35px;
+margin-top:10px;
+}
+#latest-posts ul{
+display:flex;
+margin:auto;
+height:auto;
+}
+.li-box{
+padding:5px;
+border:1px solid black;
+margin-top:10px;
+width:33.3%;
+height:auto;
+}
+
+.li-img{
+height: 150px;
+width:150px;
+display:flex;
+margin:auto;
+}
+.post__content{
+text-align:center;
+margin-top:30px;
+}
+.post__content h3{
+font-size:20px;
+}
+.post__content p{
+margin-top:20px;
+margin-bottom:5px;
+}
+#about{
+height:220px;
+width:90%;
+border:1px solid red;
+display:flex;
+margin:auto;
+flex-direction:column;
+}
+
+#about h2{
+font-size:40px;
+text-align:center;
+}
+
+#about p{
+font-size:30px;
+text-align:center;
+margin-top:50px;
+}

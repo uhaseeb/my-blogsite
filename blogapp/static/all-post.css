@@ -1,0 +1,16 @@
+
+body{
+background-color: gray;
+}
+#all-posts ul{
+
+width:80%;
+display:flex;
+margin:auto;
+}
+#all-posts h2{
+    text-align:center;
+    font-size:35px;
+    margin-top:10px;
+    margin-bottom:40px;
+}
