@@ -8,13 +8,21 @@
 
 {% block content %}
 <div id="summary">
-    <h2>{{identified_post.title}}</h2>
+    <h2>{{post.title}}</h2>
+
+    <div id="read-later">
+        <form method="post" action="{% url 'read_later' %}">
+            {% csrf_token %}
+            <input type="hidden" value="{{post.id}}" name="post_id">
+             <button>Read Later</button>
+        </form>
+    </div>
     <article>
 
-        <img src="{%static 'images/'|add:identified_post.image_name' %}" alt="{{identified_post.title}}">
-        <address><a class="address-name" href="mailto:{{post.author.email_address}}"> {{identified_post.author}}</a></address>
+        <img src="{{post.image.url}}" alt="{{post.title}}">
+        <address><a class="address-name" href="mailto:{{post.author.email_address}}"> {{post.author}}</a></address>
         <div>
-            Last Updated On <time>{{identified_post.date}}</time>
+            Last Updated On <time>{{post.date}}</time>
         </div>
         <div>
             Tags
@@ -26,6 +34,32 @@
     </article>
 </div>
 <main>
-    <p>{{identified_post.content| linebreaks}}</p>
+    <p>{{post.content| linebreaks}}</p>
 </main>
+<section id="comments">
+    <h3>All Comments</h3>
+    <ul>
+    {% for comment in comments %}
+        <li>
+            <h4>{{comment.user_name}}</h4>
+                {{comment.text| linebreaks }}
+    </li>
+    </ul>
+    {% endfor %}
+    </ul>
+</section>
+<section id="comment-form">
+    <h2>Your Comment</h2>
+    <form method="post" action="{% url 'post_detail_page' post.slug %}">
+        {% csrf_token %}
+        {% for form_field in comment_form %}
+        <div class="form-control {% if form_field.errors %}invalid{% endif %}">
+            {{form_field.label}}
+            {{form_field}}
+            {{form_field.errors}}
+        </div>
+        {% endfor %}
+        <button>Save Comment</button>
+    </form>
+</section>
 {% endblock %}
