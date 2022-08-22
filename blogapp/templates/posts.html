@@ -4,7 +4,7 @@
             <article class="post">
                 <a href="{% url 'post_detail_page' post.slug %}">
                     <div class="li-img">
-                    <img class="post-img" src="{%static 'images/'|add:post.image_name %}" alt="mountain Hiking">
+                    <img class="post-img" src="{{post.image.url}}" alt="mountain Hiking">
                     </div>
                     <div class="post__content">
                         <h3>{{post.title}}</h3>
